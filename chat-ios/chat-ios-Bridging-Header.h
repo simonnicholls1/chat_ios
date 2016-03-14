@@ -4,5 +4,6 @@
 @import MobileCoreServices;
 
 #import <Quickblox/Quickblox.h>
+#import <QMServices.h>
 
 

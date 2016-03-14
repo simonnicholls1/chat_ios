@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B433981CA627C297D2C57016 /* Pods_chat_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6707FC21B18A9BC66F033CFF /* Pods_chat_ios.framework */; };
+		C3B98FADEFA564684E7755B3 /* libPods-chat-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7CFAC666FD71468484E31 /* libPods-chat-ios.a */; };
+		F466EF641C8ADD76000DDA3F /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F466EF631C8ADD76000DDA3F /* SubjectModel.swift */; };
+		F4BC994A1C94505200552C06 /* TutorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BC99491C94505200552C06 /* TutorModel.swift */; };
+		F4BC994C1C94506B00552C06 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BC994B1C94506B00552C06 /* StudentModel.swift */; };
+		F4BC99501C958D9600552C06 /* TutorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BC994F1C958D9600552C06 /* TutorViewController.swift */; };
 		F4C3F7CA1C61319500DB5431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C3F7C91C61319500DB5431 /* AppDelegate.swift */; };
-		F4C3F7CC1C61319500DB5431 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C3F7CB1C61319500DB5431 /* ViewController.swift */; };
+		F4C3F7CC1C61319500DB5431 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C3F7CB1C61319500DB5431 /* SplashViewController.swift */; };
 		F4C3F7CF1C61319500DB5431 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C3F7CD1C61319500DB5431 /* Main.storyboard */; };
 		F4C3F7D11C61319500DB5431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C3F7D01C61319500DB5431 /* Assets.xcassets */; };
 		F4C3F7D41C61319500DB5431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4C3F7D21C61319500DB5431 /* LaunchScreen.storyboard */; };
+		F4F4B5331C73B9000018DB2E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F4B5321C73B9000018DB2E /* LoginViewController.swift */; };
 		F4FD91911C6F5E0700B74304 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD91901C6F5E0700B74304 /* RegisterViewController.swift */; };
 		F4FD91931C6F661900B74304 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD91921C6F661900B74304 /* HomePageViewController.swift */; };
 		F4FD91951C6F841200B74304 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD91941C6F841100B74304 /* ActivityIndicatorView.swift */; };
@@ -21,15 +26,20 @@
 /* Begin PBXFileReference section */
 		0D0E2F15080372E298890AA2 /* Pods-chat-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-chat-ios/Pods-chat-ios.release.xcconfig"; sourceTree = "<group>"; };
 		288FD37429DA6B51C3BC6362 /* Pods-chat-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chat-ios/Pods-chat-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		6707FC21B18A9BC66F033CFF /* Pods_chat_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chat_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31E7CFAC666FD71468484E31 /* libPods-chat-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-chat-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F466EF631C8ADD76000DDA3F /* SubjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
+		F4BC99491C94505200552C06 /* TutorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorModel.swift; sourceTree = "<group>"; };
+		F4BC994B1C94506B00552C06 /* StudentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
+		F4BC994F1C958D9600552C06 /* TutorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorViewController.swift; sourceTree = "<group>"; };
 		F4C3F7C61C61319500DB5431 /* chat-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C3F7C91C61319500DB5431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4C3F7CB1C61319500DB5431 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4C3F7CB1C61319500DB5431 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F4C3F7CE1C61319500DB5431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4C3F7D01C61319500DB5431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4C3F7D31C61319500DB5431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4C3F7D51C61319500DB5431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4C3F7DB1C6134BA00DB5431 /* chat-ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chat-ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		F4F4B5321C73B9000018DB2E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F4FD91901C6F5E0700B74304 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F4FD91921C6F661900B74304 /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		F4FD91941C6F841100B74304 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
@@ -40,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B433981CA627C297D2C57016 /* Pods_chat_ios.framework in Frameworks */,
+				C3B98FADEFA564684E7755B3 /* libPods-chat-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +60,7 @@
 		0425E50721C9E8CCB8822196 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6707FC21B18A9BC66F033CFF /* Pods_chat_ios.framework */,
+				31E7CFAC666FD71468484E31 /* libPods-chat-ios.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -62,6 +72,46 @@
 				0D0E2F15080372E298890AA2 /* Pods-chat-ios.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F466EF5F1C8ADB82000DDA3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F466EF631C8ADD76000DDA3F /* SubjectModel.swift */,
+				F4BC99491C94505200552C06 /* TutorModel.swift */,
+				F4BC994B1C94506B00552C06 /* StudentModel.swift */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F466EF601C8ADB9B000DDA3F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F4C3F7CB1C61319500DB5431 /* SplashViewController.swift */,
+				F4F4B5321C73B9000018DB2E /* LoginViewController.swift */,
+				F4FD91921C6F661900B74304 /* HomePageViewController.swift */,
+				F4FD91901C6F5E0700B74304 /* RegisterViewController.swift */,
+				F4BC994F1C958D9600552C06 /* TutorViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F466EF611C8ADBC3000DDA3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F4FD91941C6F841100B74304 /* ActivityIndicatorView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F466EF621C8ADBD5000DDA3F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F4C3F7D21C61319500DB5431 /* LaunchScreen.storyboard */,
+				F4C3F7CD1C61319500DB5431 /* Main.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 		F4C3F7BD1C61319400DB5431 = {
@@ -85,16 +135,14 @@
 		F4C3F7C81C61319500DB5431 /* chat-ios */ = {
 			isa = PBXGroup;
 			children = (
+				F466EF621C8ADBD5000DDA3F /* Storyboard */,
+				F466EF611C8ADBC3000DDA3F /* Views */,
+				F466EF601C8ADB9B000DDA3F /* ViewControllers */,
+				F466EF5F1C8ADB82000DDA3F /* Models */,
 				F4C3F7C91C61319500DB5431 /* AppDelegate.swift */,
-				F4C3F7CB1C61319500DB5431 /* ViewController.swift */,
-				F4C3F7CD1C61319500DB5431 /* Main.storyboard */,
 				F4C3F7D01C61319500DB5431 /* Assets.xcassets */,
-				F4C3F7D21C61319500DB5431 /* LaunchScreen.storyboard */,
 				F4C3F7D51C61319500DB5431 /* Info.plist */,
 				F4C3F7DB1C6134BA00DB5431 /* chat-ios-Bridging-Header.h */,
-				F4FD91901C6F5E0700B74304 /* RegisterViewController.swift */,
-				F4FD91921C6F661900B74304 /* HomePageViewController.swift */,
-				F4FD91941C6F841100B74304 /* ActivityIndicatorView.swift */,
 			);
 			path = "chat-ios";
 			sourceTree = "<group>";
@@ -222,10 +270,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F4B5331C73B9000018DB2E /* LoginViewController.swift in Sources */,
+				F4BC99501C958D9600552C06 /* TutorViewController.swift in Sources */,
+				F4BC994C1C94506B00552C06 /* StudentModel.swift in Sources */,
 				F4FD91931C6F661900B74304 /* HomePageViewController.swift in Sources */,
+				F4BC994A1C94505200552C06 /* TutorModel.swift in Sources */,
 				F4FD91951C6F841200B74304 /* ActivityIndicatorView.swift in Sources */,
 				F4FD91911C6F5E0700B74304 /* RegisterViewController.swift in Sources */,
-				F4C3F7CC1C61319500DB5431 /* ViewController.swift in Sources */,
+				F4C3F7CC1C61319500DB5431 /* SplashViewController.swift in Sources */,
+				F466EF641C8ADD76000DDA3F /* SubjectModel.swift in Sources */,
 				F4C3F7CA1C61319500DB5431 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.les.chat-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "chat-ios/chat-ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
 		};

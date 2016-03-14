@@ -18,6 +18,10 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityIndicatorView = ActivityIndicatorView(title: "Registering...", center: self.view.center)
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
 
     }
     
@@ -27,7 +31,7 @@ class RegisterViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "segueRegisterHome") {
+        if (segue.identifier == "segueRegisterSubjects") {
             let svc = segue.destinationViewController as! HomePageViewController;
             
             svc.userToPass = self.userQB
@@ -40,17 +44,15 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextBox: UITextField!
     
     @IBOutlet weak var nameTextBox: UITextField!
+    
     @IBAction func registerAction(sender: AnyObject) {
         let emailString : String = emailTextBox.text!
         let passwordString : String = passwordTextBox.text!
         let nameString : String = nameTextBox.text!
         
         quickbloxRegistration(emailString, password: passwordString, name: nameString)
-        
     }
-    @IBAction func backToLogin(sender: AnyObject) {
-        self.performSegueWithIdentifier("segueRegisterLogin", sender: self)
-    }
+    
     func  quickbloxRegistration  (email: String, password: String, name: String) -> Void
     {
         let user: QBUUser = QBUUser()
@@ -73,7 +75,7 @@ class RegisterViewController: UIViewController {
                 self.activityIndicatorView.stopAnimating()
                 self.activityIndicatorView.getViewActivityIndicator().removeFromSuperview()
                 self.userQB = user!
-                self.performSegueWithIdentifier("segueRegisterHome", sender: self)
+                self.performSegueWithIdentifier("segueRegisterSubjects", sender: self)
                 
                 }, errorBlock: {(response: QBResponse) -> Void in
                     self.activityIndicatorView.stopAnimating()
@@ -96,6 +98,12 @@ class RegisterViewController: UIViewController {
         })
 
         
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
 

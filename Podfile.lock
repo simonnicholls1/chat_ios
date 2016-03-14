@@ -1,10 +1,21 @@
 PODS:
-  - QuickBlox (2.6.4)
+  - Bolts (1.5.0):
+    - Bolts/AppLinks (= 1.5.0)
+    - Bolts/Tasks (= 1.5.0)
+  - Bolts/AppLinks (1.5.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.5.0)
+  - QMServices (0.3.6):
+    - Bolts (= 1.5.0)
+    - QuickBlox (~> 2.6.5)
+  - QuickBlox (2.6.5)
 
 DEPENDENCIES:
-  - QuickBlox
+  - QMServices
 
 SPEC CHECKSUMS:
-  QuickBlox: 705b20fd10394ae52eecaf78a494958418610471
+  Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  QMServices: 76fe1b4eb380e92337a2fc07406fccd30f5bfda9
+  QuickBlox: 9aaadd0e6d6c533622ca6395b7263f262a519141
 
 COCOAPODS: 0.39.0
