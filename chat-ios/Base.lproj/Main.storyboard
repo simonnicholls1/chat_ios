@@ -17,16 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEe-tI-PSD">
-                                <rect key="frame" x="31" y="254" width="55" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kz-pa-bgH">
-                                <rect key="frame" x="31" y="300" width="84" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g4d-Ai-e7o">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,33 +26,12 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ee-2V-OpR">
-                                <rect key="frame" x="122" y="245" width="184" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pix-86-9gX">
-                                <rect key="frame" x="122" y="291" width="184" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qu-eF-wW2">
-                                <rect key="frame" x="160" y="347" width="55" height="35"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginAction:" destination="rhc-pG-epK" eventType="touchUpInside" id="Dom-5j-cCr"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="HWT-5G-Soc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="PasswordTextField" destination="pix-86-9gX" id="H6f-67-sqr"/>
-                        <outlet property="UserTextField" destination="1Ee-2V-OpR" id="ekD-Hk-Pfs"/>
                         <segue destination="qYS-xQ-gjR" kind="show" identifier="segueLoginHome" id="JT5-WC-l68"/>
                     </connections>
                 </viewController>
@@ -311,15 +280,42 @@
                     <connections>
                         <outlet property="subjectLabel" destination="jb2-oe-iMy" id="GEd-Xr-YsF"/>
                         <outlet property="tutorsTable" destination="mSl-1P-hGD" id="tSp-i2-d0x"/>
+                        <segue destination="vlr-RR-Ll4" kind="show" identifier="segueTutorChat" id="Twp-LS-iy8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRk-2B-msF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1575.5" y="1617.5"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="Myf-ao-bNT">
+            <objects>
+                <viewController id="vlr-RR-Ll4" customClass="ChatViewController" customModule="chat_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4i6-gX-lUp"/>
+                        <viewControllerLayoutGuide type="bottom" id="nHH-Pt-ARi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j61-pW-K8G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVr-lP-ddt">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Chat" id="lwZ-Bv-7La"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccb-x6-2ZD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037.5" y="1617.5"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zd0-l5-Uis"/>
-        <segue reference="OnG-bT-C6y"/>
+        <segue reference="JT5-WC-l68"/>
     </inferredMetricsTieBreakers>
 </document>

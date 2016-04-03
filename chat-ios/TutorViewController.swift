@@ -31,7 +31,7 @@ class TutorViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //userLabel.text = "User: " + userToPass.fullName!
         subjectLabel.text = "Select a " + subjectToPass.name + " tutor:"
-        //Get subjects
+        //Get tutors
         retrieveTutors()
         
         
@@ -66,6 +66,8 @@ class TutorViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         print("You have selected: " + self.tutors[indexPath.row].firstName)
+        self.performSegueWithIdentifier("segueTutorChat", sender: self)
+        
     }
     
     func retrieveTutors() {

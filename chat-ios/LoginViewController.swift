@@ -3,24 +3,28 @@
 //  chat-ios
 //
 //  Created by Simon on 16/02/2016.
-//  Copyright © 2016 Lucky Egg Studios. All rights reserved.
+//  Copyright © 2016 Lucky Egg Studios. All rights reBserved.
 //
 
-import UIKit
-import Quickblox
+import UIKit;
+import Quickblox;
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate{
     
     var activityIndicatorView : ActivityIndicatorView!
     var userQB : QBUUser = QBUUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(QMServicesManager.instance().currentUser() != nil)
-        {
-            userQB = QMServicesManager.instance().currentUser()
-            self.performSegueWithIdentifier("segueLoginHome", sender: self)
-        }
+        
+        let fbLoginButton: FBSDKLoginButton = FBSDKLoginButton();
+        fbLoginButton.center = self.view.center;
+        fbLoginButton.loginBehavior = FBSDKLoginBehavior.Web;
+        //fbLoginButton.addTarget(self, action: "loginButtonClicked", forControlEvents: UIControlEvents.TouchUpInside);
+        self.view.addSubview(fbLoginButton);
+        
+        fbLoginButton.delegate = self;
+        
         self.activityIndicatorView = ActivityIndicatorView(title: "Signing In...", center: self.view.center)
         
         //Looks for single or multiple taps.
@@ -30,6 +34,26 @@ class LoginViewController: UIViewController {
         //Navigation bar
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (FBSDKAccessToken.currentAccessToken() != nil)
+        {
+            NSLog("FB Token: " + FBSDKAccessToken.currentAccessToken().tokenString)
+            //already logged in to fb log into QB
+            qbLogin(FBSDKAccessToken.currentAccessToken().tokenString)
+            self.performSegueWithIdentifier("segueLoginHome", sender: self)
+            
+        }
+        
+        if(QMServicesManager.instance().currentUser() != nil)
+        {
+            
+            userQB = QMServicesManager.instance().currentUser()
+            NSLog("User already logged in: " + userQB.fullName!)
+            self.performSegueWithIdentifier("segueLoginHome", sender: self)
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,40 +67,59 @@ class LoginViewController: UIViewController {
             let svc = segue.destinationViewController as! HomePageViewController;
             
             svc.userToPass = self.userQB
-            
         }
     }
     
-    @IBOutlet weak var UserTextField: UITextField!
-    @IBOutlet weak var PasswordTextField: UITextField!
+    func loginButtonClicked(){
+        let login = FBSDKLoginManager()
+        login.loginBehavior = FBSDKLoginBehavior.Web
+        login.logInWithReadPermissions(["public_profile", "email"], fromViewController:self, handler: { (result, error) -> Void in
+            let token: FBSDKAccessToken = result.token
+            if (error == nil){
+                NSLog("Sign in Sucessfull" + token.tokenString)
+                NSLog("Sign in Sucessfull" + token.appID)
+                
+                self.qbLogin(token.tokenString);
+            }
+            else{
+                
+                NSLog("Error in Sign in:" + error.description)
+            }
+        })
+    }
     
-    @IBAction func loginAction(sender: AnyObject) {
-        
-        let emailString : String = UserTextField.text!
-        let passwordString : String = PasswordTextField.text!
-        
-        self.view.addSubview(self.activityIndicatorView.getViewActivityIndicator())
-        self.activityIndicatorView.startAnimating()
-        
-        QBRequest.logInWithUserEmail(emailString, password: passwordString, successBlock: {(response: QBResponse, user: QBUUser?) -> Void in
-            // login successful
-            self.activityIndicatorView.stopAnimating()
-            self.activityIndicatorView.getViewActivityIndicator().removeFromSuperview()
+    func qbLogin(accessToken: String){
+        QBRequest.logInWithSocialProvider("facebook", accessToken: accessToken, accessTokenSecret: nil, successBlock: { (response: QBResponse, user: QBUUser?) -> Void in
             
+            // ok
             self.userQB = user!
             self.performSegueWithIdentifier("segueLoginHome", sender: self)
             
-            }, errorBlock: {(response: QBResponse) -> Void in
-                self.activityIndicatorView.stopAnimating()
-                self.activityIndicatorView.getViewActivityIndicator().removeFromSuperview()
-                
+            }) { (response: QBResponse) -> Void in
                 let alert = UIAlertView()
                 alert.title = "Login Failed"
                 alert.message = String(response.error)
                 alert.addButtonWithTitle("OK")
                 alert.show()
-        })
+                NSLog("error: %@", response.error!);
+        }
+    }
 
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        if ((error) != nil) {
+            // Process error
+        }
+        else if result.isCancelled {
+            // Handle cancellations
+        }
+        else {
+            // Navigate to other view
+            self.qbLogin(result.token.tokenString);
+        }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        NSLog("User Logged Out")
     }
     
     //Calls this function when the tap is recognized.

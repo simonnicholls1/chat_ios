@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C3B98FADEFA564684E7755B3 /* libPods-chat-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E7CFAC666FD71468484E31 /* libPods-chat-ios.a */; };
 		F466EF641C8ADD76000DDA3F /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F466EF631C8ADD76000DDA3F /* SubjectModel.swift */; };
+		F4A0159D1CA860040046CF8D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0159C1CA860040046CF8D /* ChatViewController.swift */; };
 		F4BC994A1C94505200552C06 /* TutorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BC99491C94505200552C06 /* TutorModel.swift */; };
 		F4BC994C1C94506B00552C06 /* StudentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BC994B1C94506B00552C06 /* StudentModel.swift */; };
 		F4BC99501C958D9600552C06 /* TutorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BC994F1C958D9600552C06 /* TutorViewController.swift */; };
@@ -28,6 +29,7 @@
 		288FD37429DA6B51C3BC6362 /* Pods-chat-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chat-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chat-ios/Pods-chat-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		31E7CFAC666FD71468484E31 /* libPods-chat-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-chat-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F466EF631C8ADD76000DDA3F /* SubjectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
+		F4A0159C1CA860040046CF8D /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		F4BC99491C94505200552C06 /* TutorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorModel.swift; sourceTree = "<group>"; };
 		F4BC994B1C94506B00552C06 /* StudentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentModel.swift; sourceTree = "<group>"; };
 		F4BC994F1C958D9600552C06 /* TutorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				F4FD91921C6F661900B74304 /* HomePageViewController.swift */,
 				F4FD91901C6F5E0700B74304 /* RegisterViewController.swift */,
 				F4BC994F1C958D9600552C06 /* TutorViewController.swift */,
+				F4A0159C1CA860040046CF8D /* ChatViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			files = (
 				F4F4B5331C73B9000018DB2E /* LoginViewController.swift in Sources */,
 				F4BC99501C958D9600552C06 /* TutorViewController.swift in Sources */,
+				F4A0159D1CA860040046CF8D /* ChatViewController.swift in Sources */,
 				F4BC994C1C94506B00552C06 /* StudentModel.swift in Sources */,
 				F4FD91931C6F661900B74304 /* HomePageViewController.swift in Sources */,
 				F4BC994A1C94505200552C06 /* TutorModel.swift in Sources */,
